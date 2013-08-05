@@ -1,0 +1,33 @@
+{
+    "name": "hoobr-bucket-tester",
+    "description": "Bucket testing solution for hoobr.",
+    "version": "0.0.1",
+    "author": {
+        "name": "Ric Allinson",
+        "email": "npm@ricallinson.com"
+    },
+    "engines": {
+        "php": ">= 5.4.0"
+    },
+    "config": {
+        "hoobr": {
+            "version": "*",
+            "type": "library",
+            "core": "true"
+        }
+    },
+    "dependencies" : {
+        
+    },
+    "devDependencies" : {
+        
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:ricallinson/hoobr-bucket-tester.git"
+    },
+    "scripts": {
+        "test": "./test/run"
+    },
+    "license": "MIT"
+}
