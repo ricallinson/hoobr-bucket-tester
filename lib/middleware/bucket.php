@@ -9,7 +9,7 @@ $uuid = $require("php-uuid");
     Grab the tracker or set a new one.
 */
 
-$tracker = ""; // $req->cookie("hoobrt");
+$tracker = $req->cookie("hoobrt");
 
 if (!$tracker) {
     $tracker = $uuid->generate(4, 101);
@@ -20,12 +20,14 @@ if (!$tracker) {
     Grab the bucket or set a new one.
 */
 
-$bucket = 0; // $req->cookie("hoobrb");
+$bucket = $req->cookie("hoobrb");
 
 if (!$bucket) {
     $bucket = (int)round(crc32($tracker), 0);
     $res->cookie("hoobrb", $bucket);
 }
+
+$req->cfg("site/bucket", null);
 
 // $set = 10;
 // $a = 0;
