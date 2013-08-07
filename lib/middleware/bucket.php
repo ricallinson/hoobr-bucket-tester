@@ -12,7 +12,7 @@ $uuid = $require("php-uuid");
 $tracker = $req->cookie("hoobrt");
 
 if (!$tracker) {
-    $tracker = $uuid->generate(4, 101);
+    $tracker = $uuid(4);
     $res->cookie("hoobrt", $tracker);
 }
 
