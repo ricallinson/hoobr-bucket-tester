@@ -36,7 +36,7 @@ $bucketId = $req->param("bucket-id", $bucketId);
 /*
     Set the bucket value in the request configuration so it can be used.
 */
-var_dump($bucketId);
+
 $req->cfg("site/bucket", $bucketId);
 
 // $set = 10;
