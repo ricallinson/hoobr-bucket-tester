@@ -20,14 +20,24 @@ if (!$tracker) {
     Grab the bucket or set a new one.
 */
 
-$bucket = $req->cookie("hoobrb");
+$bucketId = $req->cookie("hoobrb");
 
-if (!$bucket) {
-    $bucket = (int)round(crc32($tracker), 0);
-    $res->cookie("hoobrb", $bucket);
+if (!$bucketId) {
+    $bucketId = (int)round(crc32($tracker), 0);
+    $res->cookie("hoobrb", $bucketId);
 }
 
-$req->cfg("site/bucket", null);
+/*
+    If the user explicity set a bucketId in the URL use that.
+*/
+
+$bucketId = $req->param("bucket-id", $bucketId);
+
+/*
+    Set the bucket value in the request configuration so it can be used.
+*/
+var_dump($bucketId);
+$req->cfg("site/bucket", $bucketId);
 
 // $set = 10;
 // $a = 0;
